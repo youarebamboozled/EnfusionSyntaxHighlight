@@ -1,0 +1,28 @@
+{
+  "name": "enfusion-syntax-highlighting",
+  "displayName": "Enfusion Syntax Highlighting",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "enfusion",
+      "aliases": ["Enfusion Script", "enfusion"],
+      "extensions": [".c"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "enfusion",
+      "scopeName": "source.enfusion",
+      "path": "./syntaxes/enfusion.tmLanguage.json"
+    }],
+    "textmateThemedPaths": [
+      "./lightgreen-highlight.css"
+    ]
+  }
+}
