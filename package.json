@@ -1,8 +1,14 @@
 {
-  "name": "enfusion-syntax-highlighting",
-  "displayName": "Enfusion Syntax Highlighting",
-  "description": "",
+  "name": "enfusion-script-syntax-highlighting",
+  "displayName": "Enfusion Script Syntax Highlighting",
+  "description": "Simple syntax highlighting for Enfusion Script files.",
   "version": "0.0.1",
+  "publisher": "YouAreBamboozled",
+  "license": "MIT",
+  "author": {
+    "name": "YouAreBamboozled",
+    "email": "mojo@youarebamboozled.com"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },
