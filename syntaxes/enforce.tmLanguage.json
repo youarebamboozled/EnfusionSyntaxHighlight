@@ -1,0 +1,98 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Enforce Script",
+	"patterns": [
+		{
+			"begin": "/\\*",
+			"end": "\\*/",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.enforce"
+				}
+			},
+			"name": "comment.block.enforce"
+		},
+		{
+			"begin": "//",
+			"end": "$",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.enforce"
+				}
+			},
+			"name": "comment.line.double-slash.enforce"
+		},
+		{
+			"begin": "\"",
+			"end": "\"",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.enforce"
+				},
+				"1": {
+					"name": "punctuation.definition.string.end.enforce"
+				}
+			},
+			"name": "string.quoted.double.enforce",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.enforce"
+				}
+			]
+		},
+		{
+			"begin": "'",
+			"end": "'",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.enforce"
+				},
+				"1": {
+					"name": "punctuation.definition.string.end.enforce"
+				}
+			},
+			"name": "string.quoted.single.enforce",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.enforce"
+				}
+			]
+		},
+		{
+			"match": "\\b(abstract|as|base|bool|break|byte|case|catch|checked|class|const|continue|decimal|default|delegate|do|double|else|enum|event|explicit|extern|finally|fixed|float|for|foreach|goto|if|implicit|in|int|interface|internal|is|lock|long|namespace|new|null|object|operator|out|override|params|private|protected|public|readonly|ref|return|sbyte|sealed|short|sizeof|stackalloc|static|struct|switch|this|throw|try|typeof|uint|ulong|unchecked|unsafe|ushort|using|virtual|void|volatile|while)\\b",
+			"name": "keyword.control.enforce"
+		},
+		{
+			"match": "\\b(add|alias|ascending|async|await|by|descending|dynamic|equals|from|get|global|group|into|join|let|nameof|on|orderby|partial|remove|select|set|value|var|when|where|yield)\\b",
+			"name": "keyword.other.enforce"
+		},
+		{
+			"match": "\\b(SCR_[a-zA-Z0-9_]+)\\b",
+			"name": "entity.name.function.enforce"
+		},
+		{
+			"match": "\\b(Attribute|string|ResourceName|IEntity|EntitySpawnParams|Resource|vector|UIWidgets|Replication|array|BaseWorld)\\b",
+			"name": "entity.name.type.enforce"
+		},
+		{
+			"match": "\\b([A-Z]\\w*_[a-zA-Z]\\w*)\\b",
+			"name": "entity.name.class.enforce"
+		},
+		{
+			"match": "\\b([a-zA-Z]\\w*)\\s*\\(",
+			"name": "entity.name.function.enforce"
+		},
+		{
+			"match": "\\b([a-zA-Z0-9_]+)\\b",
+			"name": "variable.other.member.enforce"
+		},
+		{
+			"match": "\\b(true|false)\\b",
+			"name": "constant.language.enforce"
+		}
+	],
+
+	"scopeName": "source.enforce"
+}
