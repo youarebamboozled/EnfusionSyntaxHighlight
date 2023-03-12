@@ -1,8 +1,8 @@
 {
-  "name": "enfusion-script-syntax-highlighting",
-  "displayName": "Enfusion Script Syntax Highlighting",
-  "description": "Simple syntax highlighting for Enfusion Script files.",
-  "version": "0.0.1",
+  "name": "enforce-script-syntax-highlighting",
+  "displayName": "Enforce Script Syntax Highlighting",
+  "description": "Simple syntax highlighting for Enforce Script files.",
+  "version": "0.0.6",
   "publisher": "YouAreBamboozled",
   "license": "MIT",
   "author": {
@@ -17,15 +17,15 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "enfusion",
-      "aliases": ["Enfusion Script", "enfusion"],
+      "id": "enforce",
+      "aliases": ["Enforce Script", "enforce"],
       "extensions": [".c"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "enfusion",
-      "scopeName": "source.enfusion",
-      "path": "./syntaxes/enfusion.tmLanguage.json"
+      "language": "enforce",
+      "scopeName": "source.enforce",
+      "path": "./syntaxes/enforce.tmLanguage.json"
     }],
     "textmateThemedPaths": [
       "./lightgreen-highlight.css"
