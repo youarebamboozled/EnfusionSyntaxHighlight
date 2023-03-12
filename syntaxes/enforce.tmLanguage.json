@@ -73,7 +73,7 @@
 			"name": "entity.name.function.enforce"
 		},
 		{
-			"match": "\\b(Attribute|string|ResourceName|IEntity|EntitySpawnParams|Resource|vector|UIWidgets|Replication|array|BaseWorld)\\b",
+			"match": "\\b(Attribute|string|ResourceName|IEntity|EntitySpawnParams|Resource|vector|UIWidgets|Replication|array|BaseWorld|modded)\\b",
 			"name": "entity.name.type.enforce"
 		},
 		{
