@@ -1,0 +1,51 @@
+{
+    "name": "Enforce Dark Theme",
+    "type": "dark",
+    "tokenColors": [
+      {
+        "scope": "keyword.control.enforce",
+        "settings": {
+          "foreground": "#59a6e9",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.other.enforce",
+        "settings": {
+          "foreground": "#59a6e9"
+        }
+      },
+      {
+        "scope": "string.quoted.double.enforce",
+        "settings": {
+          "foreground": "#c178dd"
+        }
+      },
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "entity.name.type.class.enforce",
+        "settings": {
+          "foreground": "#40b5ac"
+        }
+      },
+      {
+        "scope": "entity.name.function.definition.enforce",
+        "settings": {
+          "foreground": "#f3ad58"
+        }
+      },
+      {
+        "scope": "entity.name.function.call.enforce",
+        "settings": {
+          "foreground": "#f3ad58"
+        }
+      }
+    ]
+  }
+  

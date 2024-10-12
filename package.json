@@ -1,34 +1,60 @@
 {
-  "name": "enforce-script-syntax-highlighting",
-  "displayName": "Enforce Script Syntax Highlighting",
-  "description": "Simple syntax highlighting for Enforce Script files.",
-  "version": "0.0.6",
-  "publisher": "YouAreBamboozled",
-  "license": "MIT",
-  "author": {
-    "name": "YouAreBamboozled",
-    "email": "mojo@youarebamboozled.com"
-  },
+  "name": "enforce-vscode-plugin",
+  "displayName": "Enforce VSCode Plugin",
+  "description": "VSCode extension for the Enforce language used in Arma Reforger",
+  "publisher": "mojo",
+  "version": "0.0.1",
   "engines": {
-    "vscode": "^1.75.0"
-  },
+		"vscode": "^1.73.0"
+	},
   "categories": [
     "Programming Languages"
   ],
+  "main": "./client/out/extension.js",
   "contributes": {
-    "languages": [{
-      "id": "enforce",
-      "aliases": ["Enforce Script", "enforce"],
-      "extensions": [".c"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "enforce",
-      "scopeName": "source.enforce",
-      "path": "./syntaxes/enforce.tmLanguage.json"
-    }],
-    "textmateThemedPaths": [
-      "./lightgreen-highlight.css"
+    "languages": [
+      {
+        "id": "enforce",
+        "aliases": [
+          "Enforce",
+          "enforce"
+        ],
+        "extensions": [
+          ".c"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "enforce",
+        "scopeName": "source.enforce",
+        "path": "./syntaxes/enforce.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Enforce Dark Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/enforce-dark-color-theme.json"
+      }
     ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.73.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0",
+    "vscode-languageserver": "^8.1.0",
+    "vscode-languageserver-textdocument": "^1.0.12",
+    "vscode-languageserver-types": "^3.17.5"
   }
 }
