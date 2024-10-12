@@ -3,6 +3,10 @@
   "displayName": "Enforce VSCode Plugin",
   "description": "VSCode extension for the Enforce language used in Arma Reforger",
   "publisher": "mojo",
+  "repository": {
+    "url": "https://github.com/youarebamboozled/EnfusionSyntaxHighlight",
+    "type": "github"
+  },
   "version": "0.0.1",
   "engines": {
 		"vscode": "^1.73.0"
