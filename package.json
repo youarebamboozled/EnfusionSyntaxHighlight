@@ -2,12 +2,12 @@
   "name": "enforce-vscode-plugin",
   "displayName": "Enforce VSCode Plugin",
   "description": "VSCode extension for the Enforce language used in Arma Reforger",
-  "publisher": "mojo",
+  "publisher": "youarebamboozled",
   "repository": {
     "url": "https://github.com/youarebamboozled/EnfusionSyntaxHighlight",
     "type": "github"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -43,7 +43,18 @@
         "uiTheme": "vs-dark",
         "path": "./themes/enforce-dark-color-theme.json"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Enforce Language Server Configuration",
+      "properties": {
+        "enforce.diagnostics.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable or disable diagnostics in the Enforce Language Server. HIGHLY EXPERIMENTAL"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -53,13 +64,14 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.73.0",
-    "typescript": "^5.0.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "vscode-languageclient": "^8.1.0",
     "vscode-languageserver": "^8.1.0",
     "vscode-languageserver-textdocument": "^1.0.12",
-    "vscode-languageserver-types": "^3.17.5"
+    "vscode-languageserver-types": "^3.17.5",
+    "vscode-uri": "^3.0.8"
   }
 }

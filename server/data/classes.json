@@ -72259,6 +72259,10 @@
           "TextureValidatorRequest",
           "GetResponse"
         ]
+      },
+      {
+        "class_name": "PolygonDrawCommand",
+        "methods": []
       }
     ]
   }

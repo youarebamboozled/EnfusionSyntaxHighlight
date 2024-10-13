@@ -45,6 +45,18 @@
         "settings": {
           "foreground": "#f3ad58"
         }
+      },
+      {
+        "scope": "entity.name.type.user_class.enforce",
+        "settings": {
+          "foreground": "#40b5ac"
+        }
+      },
+      {
+        "scope": "entity.name.type.user_enum.enforce",
+        "settings": {
+          "foreground": "#40b5ac"
+        }
       }
     ]
   }

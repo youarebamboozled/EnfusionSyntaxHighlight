@@ -752,7 +752,6 @@
     "SCR_ESearchXOBPluginSearchType",
     "SCR_ESearchXOBPluginLayerFilter",
     "prefixes",
-    "or",
     "SCR_EScriptTemplateType",
     "SCR_EBatchPrefabOperationFlag",
     "SCR_EBatchPrefabOperationComponentFlag",

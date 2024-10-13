@@ -30,22 +30,43 @@ const path = __importStar(require("path"));
 const node_1 = require("vscode-languageclient/node");
 let client;
 function activate(context) {
-    const serverModule = context.asAbsolutePath(path.join('server', 'out', 'server.js'));
-    const debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
+    const serverModule = context.asAbsolutePath(path.join("server", "out", "server.js"));
+    const debugOptions = { execArgv: ["--nolazy", "--inspect=6009"] };
     const serverOptions = {
         run: { module: serverModule, transport: node_1.TransportKind.ipc },
-        debug: { module: serverModule, transport: node_1.TransportKind.ipc, options: debugOptions }
+        debug: {
+            module: serverModule,
+            transport: node_1.TransportKind.ipc,
+            options: debugOptions,
+        },
     };
     const clientOptions = {
-        documentSelector: [{ scheme: 'file', language: 'enforce' }],
+        documentSelector: [{ scheme: "file", language: "enforce" }],
         synchronize: {
-            fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
+            fileEvents: vscode.workspace.createFileSystemWatcher("**/.clientrc"),
         }
     };
-    client = new node_1.LanguageClient('enforceLanguageServer', 'Enforce Language Server', serverOptions, clientOptions);
-    client.start();
+    client = new node_1.LanguageClient("enforceLanguageServer", "Enforce Language Server", serverOptions, clientOptions);
+    try {
+        client.start();
+        console.log("Language client started successfully.");
+    }
+    catch (error) {
+        console.error("Failed to start language client:", error);
+    }
 }
 function deactivate() {
-    return client ? client.stop() : undefined;
+    if (!client) {
+        console.warn("Language client is not initialized, nothing to stop.");
+        return undefined;
+    }
+    try {
+        console.log("Stopping language client...");
+        return client.stop();
+    }
+    catch (error) {
+        console.error("Error stopping language client:", error);
+        return undefined;
+    }
 }
 //# sourceMappingURL=extension.js.map
